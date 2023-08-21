@@ -27,8 +27,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: example-app
-        path:
-          .
+        path: ./
   
   test:
     runs-on: ubuntu-latest
