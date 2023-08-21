@@ -22,13 +22,22 @@ jobs:
     
     - name: "Install dependencies"
       run: npm install
+    
+    - name: "Artifacts"
+      uses: actions/upload-artifact@v3
+      with:
+        name: example-app
+        path:
+          name
   
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: "Checkout repo"
-        uses: actions/checkout@v2
+      - name: "download artifacts"
+        uses: actions/download-artifact@v3
+        with: 
+          name: example-app
       
       - name: "Setup node"
         uses: actions/setup-node@v2
