@@ -37,6 +37,7 @@ jobs:
         uses: actions/download-artifact@v3
         with: 
           name: example-app
+          path: ./
       
       - name: "Setup node"
         uses: actions/setup-node@v2
