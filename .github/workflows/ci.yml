@@ -28,7 +28,7 @@ jobs:
       with:
         name: example-app
         path:
-          name
+          .
   
   test:
     runs-on: ubuntu-latest
