@@ -23,21 +23,21 @@ jobs:
     - name: "Install dependencies"
       run: npm install
     
-    - name: "Artifacts"
-      uses: actions/upload-artifact@v3
-      with:
-        name: example-app
-        path: ./
+    # - name: "Artifacts"
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: example-app
+    #     path: ./
   
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: "download artifacts"
-        uses: actions/download-artifact@v3
-        with: 
-          name: example-app
-          path: ./
+      # - name: "download artifacts"
+      #   uses: actions/download-artifact@v3
+      #   with: 
+      #     name: example-app
+      #     path: ./
       
       - name: "Setup node"
         uses: actions/setup-node@v2
@@ -45,4 +45,9 @@ jobs:
           node-version: 16
       
       - name: "Test dependencies"
-        run: npm test
+        run: |
+          npm install \
+          npm test
+        
+      - name: "Clarification"
+        run: echo "Test complete from RW GHA"
