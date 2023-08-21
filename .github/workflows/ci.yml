@@ -52,6 +52,4 @@ jobs:
           node-version: 16
       
       - name: "Security scan"
-        run: |
-          set -e 
-          npm audit --audit-level=high
+        run: npm audit --audit-level=high
