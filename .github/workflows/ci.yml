@@ -52,4 +52,6 @@ jobs:
           node-version: 16
       
       - name: "Security scan"
-        run: npm audit --audit-level=high
+        run: |
+          npm i --package-lock-only
+          npm audit --audit-level=high
