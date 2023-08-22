@@ -32,6 +32,9 @@ jobs:
         uses: actions/setup-node@v2
         with: 
           node-version: 16
+
+      - name: Start job
+        run: Starting to build ${{ input.app_name}}
       
       - name: "Test dependencies"
         run: |
@@ -46,6 +49,8 @@ jobs:
     needs: [test]
 
     steps:
+      - name: Start job
+        run: Starting to test ${{ input.app_name}}
       - name: "setup node"
         uses: actions/setup-node@v2
         with: 
